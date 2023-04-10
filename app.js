@@ -69,10 +69,7 @@ function inputDecimal(dot) {
 }
 
 function handleOperator(nextOperator) {
-    // Destructure the properties on the calculator object
     const { firstOperand, displayValue, operator } = calculator
-    // `parseFloat` converts the string contents of `displayValue`
-    // to a floating-point number
     const inputValue = parseFloat(displayValue);
 
     if(operator && calculator.waitingForSecondOperand) {
@@ -80,11 +77,9 @@ function handleOperator(nextOperator) {
       console.log(calculator)
       return
     }
-  
-    // verify that `firstOperand` is null and that the `inputValue`
-    // is not a `NaN` value
+ 
     if (firstOperand === null && !isNaN(inputValue)) {
-      // Update the firstOperand property
+     
       calculator.firstOperand = inputValue;
       
     } else if(operator) {
